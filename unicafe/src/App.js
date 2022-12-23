@@ -50,22 +50,22 @@ const Button = (props) =>{
   )
 }
 
-const StatisticsLine = (props) =>{
-  if (props.name === "positive"){
-    return (
-      <p>
-        {props.name} {props.value} %
-      </p>
-    )
-  }
-  else{
-    return (
-      <p>
-        {props.name} {props.value}
-      </p>
-    )
-  }
-}
+// const StatisticsLine = (props) =>{
+//   if (props.name === "positive"){
+//     return (
+//       <p>
+//         {props.name} {props.value} %
+//       </p>
+//     )
+//   }
+//   else{
+//     return (
+//       <p>
+//         {props.name} {props.value}
+//       </p>
+//     )
+//   }
+// }
 
 const Statistics = (props) => {
   if (props.all === 0){
@@ -77,14 +77,42 @@ const Statistics = (props) => {
   }
   else{
     return (
-      <div>
-        <StatisticsLine name="good" value={props.good} />
-        <StatisticsLine name="neutral" value={props.neutral} />
-        <StatisticsLine name="bad" value={props.bad} />
-        <StatisticsLine name="all" value={props.all} />
-        <StatisticsLine name="average" value={props.avg} />
-        <StatisticsLine name="positive" value={props.positive} />
-      </div>
+      // <div>
+      //   <StatisticsLine name="good" value={props.good} />
+      //   <StatisticsLine name="neutral" value={props.neutral} />
+      //   <StatisticsLine name="bad" value={props.bad} />
+      //   <StatisticsLine name="all" value={props.all} />
+      //   <StatisticsLine name="average" value={props.avg} />
+      //   <StatisticsLine name="positive" value={props.positive} />
+      // </div>
+      <table>
+      <tbody>
+        <tr>
+          <td>good</td>
+          <td>{props.good}</td>
+        </tr>
+        <tr>
+          <td>neutral</td>
+          <td>{props.neutral}</td>
+        </tr>
+        <tr>
+          <td>bad</td>
+          <td>{props.bad}</td>
+        </tr>
+        <tr>
+          <td>all</td>
+          <td>{props.all}</td>
+        </tr>
+        <tr>
+          <td>avg</td>
+          <td>{props.avg}</td>
+        </tr>
+        <tr>
+          <td>positive</td>
+          <td>{props.positive} %</td>
+        </tr>
+      </tbody>
+    </table>
     )
   }
 }
